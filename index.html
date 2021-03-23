@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <title>Boolzapp</title>
+</head>
+<body>
+
+    <div id="app" class="container">
+        <div class="nav">
+            <div class="user">
+                <div class="user-name">
+                    <img src="img/avatar_io.jpg" alt="">
+                    <span>Nome Utente</span>           
+                </div>
+                <div class="icons grey">
+                    <i class="fas fa-circle-notch"></i> 
+                    <i class="far fa-comment-alt"></i>         
+                    <i class="fas fa-ellipsis-v"></i>  
+                </div>
+                     
+            </div>
+            <div class="notifications">
+                <div class="bell">
+                    <i class="fas fa-bell-slash"></i>    
+                </div> 
+                <div class="push">
+                    <span>Ricevi notifiche di nuovi messaggi</span>
+                    <span> <a class="grey" href="#">Attiva notifiche desktop</a> </span>
+                </div>      
+
+            </div>
+            <div class="search">
+                <i class="fas fa-search grey"></i>
+                <input type="text" placeholder="Cerca o inizia una nuova chat">
+            </div>
+            <div class="messages">
+                <ul>
+                    <li><img src="img/avatar_1.jpg" alt=""> Michele</li>
+                </ul>
+                
+            </div>
+
+
+        </div>
+
+        <div class="message-info">
+            <div class="friend">
+                <div class="friend-name">
+                    <img src="img/avatar_1.jpg" alt="">
+                    <div class="friend-name chat">
+                        <span>Michele</span>   
+                        <span class="grey">Ultimo accesso oggi alle</span>
+                    </div>          
+                </div>
+                <div class="icons grey">
+                    <i class="fas fa-search"></i>
+                    <i class="fas fa-paperclip"></i>        
+                    <i class="fas fa-ellipsis-v"></i>  
+                </div>                
+            </div>
+            <div class="main-messages-container">
+                <div class="send-message">
+                    <i class="far fa-smile-wink"></i>
+                    <input type="text" placeholder="Scrivi un messaggio">
+                    <i class="fas fa-microphone"></i>
+                
+                </div>
+            </div>
+            
+
+
+        </div>
+    </div>
+    
+</body>
+</html>
