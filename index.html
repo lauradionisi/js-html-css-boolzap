@@ -43,7 +43,7 @@
             </div>
             <div class="messages">
                 <ul>
-                    <li><img src="img/avatar_1.jpg" alt=""> Michele</li>
+                    <li v-for="contact in contacts"> <img src="img/avatar_1.jpg" alt=""> {{contact.name}} </li>
                 </ul>
                 
             </div>
@@ -67,18 +67,21 @@
                 </div>                
             </div>
             <div class="main-messages-container">
-                <div class="send-message">
-                    <i class="far fa-smile-wink"></i>
-                    <input type="text" placeholder="Scrivi un messaggio">
-                    <i class="fas fa-microphone"></i>
-                
-                </div>
+                <ul>
+                    <li  class="baloon baloon-user" v-for="(message, index) in contacts"> {{index}}</li>
+                </ul>
+           
             </div>
             
-
+            <div class="send-message">
+                <i class="far fa-smile-wink"></i>
+                <input type="text" placeholder="Scrivi un messaggio">
+                <i class="fas fa-microphone"></i>
+            
+            </div>
 
         </div>
     </div>
-    
+    <script src="js/main.js"></script>
 </body>
 </html>
