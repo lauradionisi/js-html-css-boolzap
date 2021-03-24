@@ -181,13 +181,10 @@ body {
 /* SEZIONE DESTRA MESSAGGI */
 
 .main-messages-container {
-    display: flex;
-    justify-content: flex-end;
     width: 100%;
     height: 84%;
     background-image: url(../img/mine.jpg);
     overflow-y: scroll;
-
 }
 
 .send-message {
@@ -213,23 +210,34 @@ body {
 }
 
 .baloon {
-    display: flex;
-    width: 300px;
+    width: 30%;
     border-radius: 10px;
-    margin-bottom: 10px;
-    align-content: center;
+    margin: 40px;
+    padding: 15px;
+    font-size: 17px;
+    
 }
 
+.message-item {
+    display: flex;
 
-.baloon-user {
+}
+.message-item.baloon-user {
+    justify-content: flex-end;
+}
+
+.message-item.baloon-user .baloon {
     background-color: #d5f9ba;
-    align-self: flex-start;
 }
 
-.baloon-friend {
-    background-color: white;
-    align-self: flex-end;
+.message-item.baloon-friend {
+    justify-content: flex-start;
+
 }
+.message-item.baloon-friend .baloon {
+    background-color: white;
+}
+
 
 .main-messages-container ul li {
     padding-left: 8px;

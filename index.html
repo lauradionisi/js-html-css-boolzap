@@ -66,9 +66,9 @@
                 </div>                
             </div>
             <div class="main-messages-container">
-                <ul>
-                    <li class="baloon baloon-user" v-for="(message, status) in contacts[counter].messages"> {{message.text}}</li> 
-                </ul>
+                <div class="message-item" v-for="message in contacts[counter].messages" :class="(message.status == 'sent') ? 'baloon-user' : 'baloon-friend'">
+                    <p class="baloon" > {{message.text}}</p> 
+                </div>
                 
            
             </div>
