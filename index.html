@@ -17,15 +17,14 @@
         <div class="nav">
             <div class="user">
                 <div class="user-name">
-                    <img src="img/avatar_io.jpg" alt="">
-                    <span>Nome Utente</span>           
+                    <img :src="'img/avatar' + user.avatar + '.jpg'" alt="">
+                    <span>{{user.name}}</span>           
                 </div>
                 <div class="icons grey">
                     <i class="fas fa-circle-notch"></i> 
                     <i class="far fa-comment-alt"></i>         
                     <i class="fas fa-ellipsis-v"></i>  
-                </div>
-                     
+                </div>                  
             </div>
             <div class="notifications">
                 <div class="bell">
@@ -43,7 +42,7 @@
             </div>
             <div class="messages">
                 <ul>
-                    <li v-for="contact in contacts"> <img src="img/avatar_1.jpg" alt=""> {{contact.name}} </li>
+                    <li v-for="(contact, index, status) in contacts" @click="activeContact(index)"> <img :src="'img/avatar' + contact.avatar + '.jpg'" alt=""> {{contact.name}} </li>
                 </ul>
                 
             </div>
@@ -68,8 +67,9 @@
             </div>
             <div class="main-messages-container">
                 <ul>
-                    <li  class="baloon baloon-user" v-for="(message, index) in contacts"> {{index}}</li>
+                    <li class="baloon baloon-user" v-for="(message, status) in contacts[counter].messages"> {{message.text}}</li> 
                 </ul>
+                
            
             </div>
             
@@ -77,11 +77,9 @@
                 <i class="far fa-smile-wink"></i>
                 <input type="text" placeholder="Scrivi un messaggio">
                 <i class="fas fa-microphone"></i>
-            
-            </div>
-
+          </div>
         </div>
     </div>
-    <script src="js/main.js"></script>
+ <script src="js/main.js"></script>
 </body>
 </html>

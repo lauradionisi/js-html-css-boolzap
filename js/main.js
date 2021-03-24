@@ -3,7 +3,12 @@ Vue.config.devtools = true;
 var app = new Vue ({
     el: '#app',
     data : {
-        counter : 0,
+        counter: 0,
+        user: {
+        name: 'Laura Dionisi',
+        avatar: '_io',
+        },
+
         contacts: [
             {
                 name: 'Michele',
@@ -88,7 +93,13 @@ var app = new Vue ({
                     }
                 ],
             },
-        ]
-        
+        ],
+
+       
+    },
+    methods: {
+        activeContact: function(index) {
+            this.counter = index;   
+        },
     }
 })
