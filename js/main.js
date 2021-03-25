@@ -3,6 +3,8 @@ Vue.config.devtools = true;
 var app = new Vue ({
     el: '#app',
     data : {
+        newMessage: '',
+        messages: [],
         counter: 0,
         user: {
         name: 'Laura Dionisi',
@@ -31,6 +33,7 @@ var app = new Vue ({
                         status: 'received'
                     }
                 ],
+
             },
             {
                 name: 'Fabio',
@@ -94,12 +97,46 @@ var app = new Vue ({
                 ],
             },
         ],
-
+        
        
     },
+
+   
+
     methods: {
+
         activeContact: function(index) {
             this.counter = index;   
         },
-    }
+
+        addMessage() {
+            
+             var user_msg = {
+                 date: '',
+                 text: '',
+                 status: 'sent'
+             }
+             var bot_msg = {
+                date: '',
+                text: 'ok',
+                status: 'recieved'
+            }
+
+            user_msg.text = this.newMessage;
+            this.contacts[this.counter].messages.push(user_msg);
+            
+     setTimeout(() => {
+            this.contacts[this.counter].messages.push(bot_msg);
+
+           },1000);
+
+
+            this.newMessage = '';
+        }
+
+        
+
+    },
+    
+    
 })

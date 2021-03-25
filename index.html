@@ -42,7 +42,7 @@
             </div>
             <div class="messages">
                 <ul>
-                    <li v-for="(contact, index, status) in contacts" @click="activeContact(index)"> <img :src="'img/avatar' + contact.avatar + '.jpg'" alt=""> {{contact.name}} </li>
+                    <li v-for="(contact, index, status) in contacts" @click="activeContact(index)" :class="(index === counter) ? 'li active' : 'li inactive'">  <img :src="'img/avatar' + contact.avatar + '.jpg'" alt=""> {{contact.name}} </li>
                 </ul>
                 
             </div>
@@ -67,15 +67,17 @@
             </div>
             <div class="main-messages-container">
                 <div class="message-item" v-for="message in contacts[counter].messages" :class="(message.status == 'sent') ? 'baloon-user' : 'baloon-friend'">
-                    <p class="baloon" > {{message.text}}</p> 
+                    <p class="baloon" > {{message.text}} <i class="fas fa-chevron-down"></i><span class="message-date">{{message.date}}</span> </p> 
+                    <p class="baloon" v-for="item in messages">{{item.text}}</p>
+
                 </div>
                 
-           
+         
             </div>
             
             <div class="send-message">
                 <i class="far fa-smile-wink"></i>
-                <input type="text" placeholder="Scrivi un messaggio">
+                <input @keypress.enter="addMessage" type="text" placeholder="Scrivi un messaggio" v-model='newMessage'>
                 <i class="fas fa-microphone"></i>
           </div>
         </div>

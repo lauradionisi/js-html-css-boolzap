@@ -155,7 +155,6 @@ body {
 .messages {
     height: 77%;
     width: 100%;
-    background-color: white;
     overflow-y: scroll;
 }
 .messages ul {
@@ -169,10 +168,15 @@ body {
 }
 .messages li:hover {
     background-color:#eaeaea;
+} 
+
+li.inactive {
+    background-color: white;
 }
-.messages li:focus {
-    background-color: grey;
+li.active {
+    background-color: rgb(197, 197, 197);
 }
+
 .messages li img {
     height: 50px;
     vertical-align: middle;
@@ -210,9 +214,8 @@ body {
 }
 
 .baloon {
-    width: 30%;
     border-radius: 10px;
-    margin: 40px;
+    margin: 20px;
     padding: 15px;
     font-size: 17px;
     
@@ -220,7 +223,6 @@ body {
 
 .message-item {
     display: flex;
-
 }
 .message-item.baloon-user {
     justify-content: flex-end;
@@ -232,12 +234,11 @@ body {
 
 .message-item.baloon-friend {
     justify-content: flex-start;
-
 }
+
 .message-item.baloon-friend .baloon {
     background-color: white;
 }
-
 
 .main-messages-container ul li {
     padding-left: 8px;
@@ -247,6 +248,23 @@ body {
     margin-top: 30px;
 }
 
+span.message-date {
+    font-size: 10px;
+    color: grey;
+    display: block;
+    text-align: end;
+    padding-top: 8px;
+}
+
+p.baloon i {
+    opacity: 0;
+}
+
+p.baloon i:hover {
+    opacity: 1;
+    margin-left: 5px;
+    color: grey;
+}
 
 /* SCROLLBAR */
 ::-webkit-scrollbar {
