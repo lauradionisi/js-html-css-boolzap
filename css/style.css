@@ -140,16 +140,17 @@ body {
 }
 .search i {
     align-items: center;
-    width: 40px;
+    width: 10%;
     height: 30px;
     background-color: white;
     margin-left: 5px;
 }
 .search input {
     height: 30px;
-    width: 400px;
+    width: 90%;
     border: white;
     padding: 5px;
+    margin-right: 5px;
 }
 
 .messages {
@@ -218,7 +219,7 @@ li.active {
     margin: 20px;
     padding: 15px;
     font-size: 17px;
-    
+    overflow-wrap: anywhere; 
 }
 
 .message-item {

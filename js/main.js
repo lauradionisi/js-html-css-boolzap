@@ -6,6 +6,9 @@ var app = new Vue ({
         newMessage: '',
         messages: [],
         counter: 0,
+        search: '',
+        contact: [],
+        day: dayjs().format('hh:mm:ss'),
         user: {
         name: 'Laura Dionisi',
         avatar: '_io',
@@ -112,12 +115,12 @@ var app = new Vue ({
         addMessage() {
             
              var user_msg = {
-                 date: '',
+                 date: dayjs().format('DD MM YYYY hh:mm:ss'),
                  text: '',
                  status: 'sent'
              }
              var bot_msg = {
-                date: '',
+                date: dayjs().format('DD MM YYYY hh:mm:ss'),
                 text: 'ok',
                 status: 'recieved'
             }
@@ -125,7 +128,7 @@ var app = new Vue ({
             user_msg.text = this.newMessage;
             this.contacts[this.counter].messages.push(user_msg);
             
-     setTimeout(() => {
+        setTimeout(() => {
             this.contacts[this.counter].messages.push(bot_msg);
 
            },1000);
@@ -134,9 +137,16 @@ var app = new Vue ({
             this.newMessage = '';
         }
 
-        
-
     },
-    
+    computed: {
+
+        filteredContact: function() {
+            return this.contacts.filter((contact) => {
+                return contact.name.match(this.search);
+            })
+        }
+        
+    }
     
 })
+

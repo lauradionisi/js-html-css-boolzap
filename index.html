@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
     <title>Boolzapp</title>
 </head>
 <body>
@@ -38,11 +39,11 @@
             </div>
             <div class="search">
                 <i class="fas fa-search grey"></i>
-                <input type="text" placeholder="Cerca o inizia una nuova chat">
+                <input type="text" v-model="search" placeholder="Cerca o inizia una nuova chat">
             </div>
             <div class="messages">
                 <ul>
-                    <li v-for="(contact, index, status) in contacts" @click="activeContact(index)" :class="(index === counter) ? 'li active' : 'li inactive'">  <img :src="'img/avatar' + contact.avatar + '.jpg'" alt=""> {{contact.name}} </li>
+                    <li v-for="(contact, index) in filteredContact" @click="activeContact(index)" :class="(index === counter) ? 'li active' : 'li inactive'">  <img :src="'img/avatar' + contact.avatar + '.jpg'" alt=""> {{contact.name}} </li>
                 </ul>
                 
             </div>
@@ -56,7 +57,7 @@
                     <img src="img/avatar_1.jpg" alt="">
                     <div class="friend-name chat">
                         <span>Michele</span>   
-                        <span class="grey">Ultimo accesso oggi alle</span>
+                        <span class="grey">Ultimo accesso oggi alle {{ day }}</span>
                     </div>          
                 </div>
                 <div class="icons grey">
