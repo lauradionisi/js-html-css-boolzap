@@ -6,8 +6,7 @@ var app = new Vue ({
         newMessage: '',
         messages: [],
         counter: 0,
-        search: '',
-        contact: [],
+        searchContactsText: '',
         day: dayjs().format('hh:mm:ss'),
         user: {
         name: 'Laura Dionisi',
@@ -135,18 +134,20 @@ var app = new Vue ({
 
 
             this.newMessage = '';
-        }
+        },
 
+        searchContacts() {
+            let self = this; 
+            this.contacts.forEach((element) => {
+                if (element.name.toLowerCase().includes(self.searchContactsText.toLowerCase())) {
+                    element.visible = true;
+                }
+                else {
+                    element.visible = false;
+                }
+            });
+        }
     },
-    computed: {
-
-        filteredContact: function() {
-            return this.contacts.filter((contact) => {
-                return contact.name.match(this.search);
-            })
-        }
-        
-    }
-    
+     
 })
 

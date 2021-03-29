@@ -39,11 +39,11 @@
             </div>
             <div class="search">
                 <i class="fas fa-search grey"></i>
-                <input type="text" v-model="search" placeholder="Cerca o inizia una nuova chat">
+                <input type="text" v-model="searchContactsText" placeholder="Cerca o inizia una nuova chat" @keyup="searchContacts">
             </div>
             <div class="messages">
                 <ul>
-                    <li v-for="(contact, index) in filteredContact" @click="activeContact(index)" :class="(index === counter) ? 'li active' : 'li inactive'">  <img :src="'img/avatar' + contact.avatar + '.jpg'" alt=""> {{contact.name}} </li>
+                    <li v-if="contact.visible" v-for="(contact, index) in contacts" @click="activeContact(index)" :class="(index === counter) ? 'li active' : 'li inactive'">  <img :src="'img/avatar' + contact.avatar + '.jpg'" > {{contact.name}} </li>
                 </ul>
                 
             </div>
